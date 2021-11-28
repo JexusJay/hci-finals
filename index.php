@@ -23,14 +23,14 @@ if(isset($_POST['enter'])){
 
 function loginForm(){
     echo 
-    '<div id="loginform">
-    <p>Please enter your name to continue!</p>
+    '<div id="loginform_v2">
     <form action="index.php" method="post">
-      <label for="name">Name &mdash;</label>
+      <label for="name">Code &mdash;</label>
       <input type="text" name="name" id="name" />
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
   </div>';
+
 }
 
 ?>
@@ -42,7 +42,8 @@ function loginForm(){
 
         <title>Tuts+ Chat Application</title>
         <meta name="description" content="Tuts+ Chat Application" />
-        <link rel="stylesheet" href="style.css" />
+        <!--<link rel="stylesheet" href="style.css" />-->
+        <link rel="stylesheet" href="style_v2.css">
     </head>
     <body>
     <?php
@@ -58,12 +59,12 @@ function loginForm(){
             </div>
 
             <div id="chatbox">
-            <?php
-            if(file_exists("log.html") && filesize("log.html") > 0){
-                $contents = file_get_contents("log.html");          
-                echo $contents;
-            }
-            ?>
+                <?php
+                if(file_exists("log.html") && filesize("log.html") > 0){
+                    $contents = file_get_contents("log.html");          
+                    echo $contents;
+                }
+                ?>
             </div>
 
             <form name="message" action="">
